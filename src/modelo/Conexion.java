@@ -8,17 +8,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 /**
  *
- * @author Anthony Giron
+ * @author New
  */
 public class Conexion {
     public Connection conexionBD;
     //jdbc:mysql://localhost:3306/?user=root
     private final String puerto = "3306";
-    private final String bd = "db_empresas";
+    private final String bd = "db_docente";
     // jdbc:mysql://localhost:3306/?user=root
     private final String urlConexion = String.format("jdbc:mysql://localhost:%s/%s?serverTimezone=UTC", puerto,bd);
-    private final String usuario = "usr_empresa";
-    private final String contra = "Empres@123";
+    private final String usuario = "usr_docente";
+    private final String contra = "Empresa123";
     private final String jdbc = "com.mysql.cj.jdbc.Driver";
     public void abrir_conexion(){
     try{

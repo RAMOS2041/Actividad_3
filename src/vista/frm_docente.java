@@ -6,7 +6,7 @@ package vista;
 import modelo.Docente;
 /**
  *
- * @author Anthony Giron
+ * @author ADMIN
  */
 public class frm_docente extends javax.swing.JFrame {
 Docente obj_docente;
@@ -348,8 +348,7 @@ public void selec_datos(){
     }//GEN-LAST:event_tbl_docenteKeyReleased
 
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
-        // TODO add your handling code here:
-        // Validate inputs
+
     if (txt_nit.getText().isEmpty() || txt_nombres.getText().isEmpty() || txt_apellidos.getText().isEmpty() ||
         txt_direccion.getText().isEmpty() || txt_telefono.getText().isEmpty() || txt_fn.getText().isEmpty() ||
         txt_codigo.getText().isEmpty() || txt_salario.getText().isEmpty() || 
@@ -357,7 +356,6 @@ public void selec_datos(){
         throw new IllegalArgumentException("All fields must be filled out.");
     }
     
-    // Create a new Docentes object and set its properties
     Docente obj_docentes = new Docente();
     obj_docentes.setNit(txt_nit.getText());
     obj_docentes.setNombres(txt_nombres.getText());
@@ -367,7 +365,6 @@ public void selec_datos(){
     obj_docentes.setFecha_nacimiento(txt_fn.getText());
     obj_docentes.setCodigo_docentes(txt_codigo.getText());
     
-    // Parse salary and handle potential number format exception
     try {
         double salario = Double.parseDouble(txt_salario.getText());
         obj_docentes.setSalario(salario);
@@ -387,8 +384,7 @@ public void selec_datos(){
     }//GEN-LAST:event_btn_agregarActionPerformed
 
     private void btn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizarActionPerformed
-        // TODO add your handling code here:
-         //String id_puesto= cmb_puesto.getSelectedItem().toString();
+     
            obj_docente = new Docente(
     Integer.valueOf(lbl_id.getText()),          
     txt_nit.getText(),                          
@@ -408,8 +404,7 @@ public void selec_datos(){
     }//GEN-LAST:event_btn_actualizarActionPerformed
 
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
-        // TODO add your handling code here:
-         //docente = new Docente();
+  
         obj_docente = new Docente();
         obj_docente.setId(Integer.valueOf(lbl_id.getText()) );
         obj_docente.borrar();

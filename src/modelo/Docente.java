@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Anthony Giron
+ * @author ADMIN
  */
 
 public class Docente extends Persona {
@@ -24,10 +24,8 @@ public class Docente extends Persona {
     private String fecha_ingreso_registro;
     Conexion cn;
 
-    // Constructor vacío
     public Docente() {}
 
-    // Constructor con parámetros
     public Docente(int id, String nit, String nombres, String apellidos, String direccion, String telefono, String fecha_nacimiento,
                     String codigo_docentes, double salario, String fecha_ingreso_laborar, String fecha_ingreso_registro) {
         super(nombres, apellidos, direccion, telefono, fecha_nacimiento); 
@@ -39,7 +37,6 @@ public class Docente extends Persona {
         this.fecha_ingreso_registro = fecha_ingreso_registro;
     }
 
-    // Getters y setters para los nuevos campos
     public int getId() {
         return id;
     }
@@ -88,7 +85,6 @@ public class Docente extends Persona {
         this.fecha_ingreso_registro = fecha_ingreso_registro;
     }
 
-    // Método para leer los docentes desde la base de datos
     @Override
     public DefaultTableModel leer() {
         DefaultTableModel tabla = new DefaultTableModel();
@@ -98,11 +94,9 @@ public class Docente extends Persona {
             String query = "SELECT * FROM docente;";
             ResultSet consulta = cn.conexionBD.createStatement().executeQuery(query);
 
-            // Encabezado de la tabla
             String encabezado[] = {"Id_docente","Codigo_docente","Nombres","Apellidos","Direccion","Telefono","Nacimiento","nit","Salario","Fecha ingreso laborar","Fecha ingreso registro"};
             tabla.setColumnIdentifiers(encabezado);
 
-            // Llenar la tabla con los resultados de la consulta
             String datos[] = new String[11];
             while (consulta.next()) {
            datos[0] = consulta.getString("id_docente");
@@ -128,7 +122,6 @@ public class Docente extends Persona {
         return tabla;
     }
 
-    // Método para agregar un docente
     public void agregar() {
         try {
             PreparedStatement parametro;
@@ -157,7 +150,6 @@ public class Docente extends Persona {
         }
     }
 
-    // Método para modificar un docente
     @Override
     public void actualizar() {
         try {
@@ -187,7 +179,6 @@ public class Docente extends Persona {
         }
     }
 
-    // Método para eliminar un docente
     @Override
     public void borrar() {
         try {

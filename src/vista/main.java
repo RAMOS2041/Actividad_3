@@ -7,7 +7,7 @@ package vista;
 
 /**
  *
- * @author Anthony Giron
+ * @author ADMIN
  */
 public class main {
 

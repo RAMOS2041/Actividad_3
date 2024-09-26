@@ -8,7 +8,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Anthony Giron
+ * @author ADMIN
  */
 abstract class Persona {
     private String nombres,apellidos,direccion,telefono,fecha_nacimiento;
